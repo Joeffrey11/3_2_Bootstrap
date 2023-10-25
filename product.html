@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+   <title>Product</title>
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" align="right">
+        <a class="navbar-brand" href="#" <font color="#113946" size="5" face="AR JULIAN"> JAV Flavoris</a></font>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+            </ul></div>
+        <nav class="navbar navbar-light bg-dark" align-right>
+            <font class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#FFF6F6">Search</button></font>
+              
+              <style>
+    
+                .modal-overlay {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(108, 173, 125, 0.5);
+                    z-index: 1;
+                    justify-content: center;
+                    align-items: center;
+                }
+        
+               
+                .modal-content {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color:#FFF6F6;
+                    padding: 20px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+
+                .card:hover{
+                    box-shadow: 5px 15px 25px red;
+                }
+
+                .card a:link, .product a:visited{
+	color: #ececec;
+	display: inline-block;
+	text-decoration: none;
+	background-color: #2c3e50;
+	padding: 1.2rem 3rem;
+	border-radius: 1rem;
+	margin-top: 1rem;
+	font-size: 14px;
+	transition: all 0.2s;
+}
+
+.card a:hover{
+	transform: scale(1.1);
+}
+            </style>
+            <center>
+        
+        <button onclick="openLoginModal()" button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#FFF6F6">Login</button>
+        
+        
+        <!-- <div id="loginModal" class="modal-overlay">
+            <div class="modal-content">
+                <h2 >Login</h2>
+                <form>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required><br><br>
+        
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required><br><br>
+        
+                    <input type="submit" style="background-color:#43e88d" value="Login">
+                </form><br>
+                <button onclick="closeLoginModal()"  style="background-color:#43e88d" >Close</button>
+            </div>
+        </div> -->
+        
+        <script>
+        
+            function openLoginModal() {
+                document.getElementById('loginModal').style.display = 'block';
+            }
+        
+            function closeLoginModal() {
+                document.getElementById('loginModal').style.display = 'none';
+            }
+        </script>
+        </center>
+        </form>
+          </nav>
+     </nav>
+     <hr>
+     <center>
+    <table>
+        <th>
+     <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="KareKare.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><font color="#113946" size="5" face="AR JULIAN">Kare Kare</h5></font>
+          <p class="card-text">Types: Pork, Beef, Seafood.</p>
+          <p class="price">Php 500</p>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#FFF6F6">Add to cart</button>
+        </div>
+      </div>
+    </th>
+    <th>
+        <div class="card" style="width: 18rem; height: -auto;">
+           <img class="card-img-top" src="Tiramasu.jpg" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title"><font color="#113946" size="5" face="AR JULIAN">Tiramasu </h5></font>
+             <p class="card-text"> Flavor: Salty, Sweet, Spicy, Sour, Creamy</p>
+             <p class="price">Php 700</p>
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#FFF6F6" >Add to cart</button>
+           </div>
+         </div>
+       </th>
+       <th>
+        <div class="card" style="width: 18rem;">
+           <img class="card-img-top" src="Ramen.jpg" alt="Card image cap">
+           <div class="card-body">
+             <h5 class="card-title"><font color="#113946" size="5" face="AR JULIAN">Ramen</h5></font>
+             <p class="card-text">Types: Miso, Shio, Tonkatsu</p>
+             <p class="price">Php 600</p>
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#FFF6F6">Add to cart</button>
+           </div>
+         </div>
+       </th>
+   
+    </table>
+</center>
+<hr>
+  </body>
