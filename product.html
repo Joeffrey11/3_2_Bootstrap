@@ -1,151 +1,256 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
- 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-   <title>Product</title>
-  </head>
-  
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" align="right">
-        <a class="navbar-brand" href="#" <font color="#113946" size="5" face="AR JULIAN"> JAV Flavoris</a></font>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAV's Flavoris</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+
+    
+
+    .product-card {
+        border: 1px solid #000000;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.1.5s;
+        padding: 10px;
+        background-color: gray;
+        height: -100px;
+    }
+
+    .product-card:hover {
+        transform: scale(1.05);
+        
+    }
+
+    .card-img {
+        max-height: 200px;
+        object-fit: cover;
+    }
+
+    .card-title {
+        font-weight: bold;
+    }
+
+    .card-price {
+        color: black;
+    }
+
+    .card-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        
+    }
+
+    .btn-favorite {
+        background-color: transparent;
+        border: none;
+        color: black; /* Change to your favorite color */
+    }
+
+    .btn-favorite:hover {
+        color: black; /* Change to your favorite color */
+    }
+    
+    h1.card-title {
+      text-align: center;
+      padding-top: 10px;
+      
+    }
+
+    .card-text {
+    max-height: 100px;
+    overflow: auto;
+    
+  }
+
+  .cart-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: blue;
+    color: black;
+    border-radius: 25%;
+    padding: 3px 6px;
+    font-size: 12px;
+    
+}
+
+.nav-item {
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+
+.container{
+    height: 100px;
+}
+
+
+
+</style>
+
+</head>
+<body>
+    <!--Top Navigation Bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">JAV's Flavoris</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-            </ul></div>
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+      
             
-        <nav class="navbar navbar-light bg-dark" align-right>
-            <font class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#FFF6F6">Search</button></font>
-              
-              <style>
-    
-                .modal-overlay {
-                    display: none;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(108, 173, 125, 0.5);
-                    z-index: 1;
-                    justify-content: center;
-                    align-items: center;
-                }
-        
-               
-                .modal-content {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    background-color:#FFF6F6;
-                    padding: 20px;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                }
+                <form class="d-flex">
+                    <input class="form-control me-3" type="search" placeholder="Search Products" aria-label="Search">
+                </form> 
+                <li><button class="btn btn-outline-success" type="submit">Search</button></li> 
+          </ul>
 
-                .card:hover{
-                    box-shadow: 5px 15px 25px red;
-                }
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-light mt-1 mb-0" data-bs-toggle="modal" data-bs-target="#product">Product</button>
+          </li>
+          
+          
+        <!-- MODAL -->
+<a type="button" class="btn btn-outline-success ml-3"
+data-bs-toggle="modal" data-bs-target="#exampleModal1">Add Product</a>
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h1 class="modal-title fs-5 text-success" id="exampleModalLabel1">Add a Product</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
 
-                .card a:link, .product a:visited{
-	color: #ececec;
-	display: inline-block;
-	text-decoration: none;
-	background-color: #2c3e50;
-	padding: 1.2rem 3rem;
-	border-radius: 1rem;
-	margin-top: 1rem;
-	font-size: 14px;
-	transition: all 0.2s;
-}
 
-.card a:hover{
-	transform: scale(1.1);
-}
-            </style>
-            <center>
-        
-        <button onclick="openLoginModal()" button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#FFF6F6">Login</button>
-        
-        
-        <!-- <div id="loginModal" class="modal-overlay">
-            <div class="modal-content">
-                <h2 >Login</h2>
-                <form>
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required><br><br>
-        
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required><br><br>
-        
-                    <input type="submit" style="background-color:#43e88d" value="Login">
-                </form><br>
-                <button onclick="closeLoginModal()"  style="background-color:#43e88d" >Close</button>
-            </div>
-        </div> -->
-        
-        <script>
-        
-            function openLoginModal() {
-                document.getElementById('loginModal').style.display = 'block';
-            }
-        
-            function closeLoginModal() {
-                document.getElementById('loginModal').style.display = 'none';
-            }
-        </script>
-        </center>
-        </form>
-          </nav>
-     </nav>
-     <hr>
-     <center>
-    <table>
-        <th>
-     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="KareKare.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"><font color="#113946" size="5" face="AR JULIAN">Kare Kare</h5></font>
-          <p class="card-text">Types: Pork, Beef, Seafood.</p>
-          <p class="price">Php 500</p>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#FFF6F6">Add to cart</button>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput" class="text-light">Product Name</label>
+      </div>
+
+      <div class="input-group mt-3">
+        <span class="input-group-text">Description</span>
+        <textarea class="form-control" aria-label="Description"></textarea>
+      </div>
+
+      <div class="input-group mt-3">
+        <span class="input-group-text">$</span>
+        <div class="form-floating">
+          <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Price">
+          <label for="floatingInputGroup1" class="text-light">Enter product's price</label>
+        </div>
+        <span class="input-group-text">.00</span>
+      </div>
+
+      <div class="mt-3">
+        <label for="formFile" class="form-label text-light">Product Image</label>
+        <input class="form-control" type="file" id="formFile">
+      </div>
+
+      <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+      <button type="button" class="btn btn-outline-success">Add</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</body>
+</html>    
+            
         </div>
       </div>
-    </th>
-    <th>
-        <div class="card" style="width: 18rem; height: -auto;">
-           <img class="card-img-top" src="Tiramasu.jpg" alt="Card image cap">
-           <div class="card-body">
-             <h5 class="card-title"><font color="#113946" size="5" face="AR JULIAN">Tiramasu </h5></font>
-             <p class="card-text"> Flavor: Salty, Sweet, Spicy, Sour, Creamy</p>
-             <p class="price">Php 700</p>
-             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#FFF6F6" >Add to cart</button>
-           </div>
-         </div>
-       </th>
-       <th>
-        <div class="card" style="width: 18rem;">
-           <img class="card-img-top" src="Ramen.jpg" alt="Card image cap">
-           <div class="card-body">
-             <h5 class="card-title"><font color="#113946" size="5" face="AR JULIAN">Ramen</h5></font>
-             <p class="card-text">Types: Miso, Shio, Tonkatsu</p>
-             <p class="price">Php 600</p>
-             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#FFF6F6">Add to cart</button>
-           </div>
-         </div>
-       </th>
-   
-    </table>
-</center>
-<hr>
-  </body>
+  </nav>
+
+
+  <!--Product Card-->
+  <!--Product 1-->
+  <h1 class="card-title">PRODUCTS</h1>
+
+  <div class="container mt-5">
+    <div class="row">
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="product-card">
+          <img class="card-img-top" src="2.jpg" alt="">
+          
+          <div class="card-body">
+            <h5 class="card-title">Adobo</h5>
+            <p class="card-text">Types: Pork, Beef, Chicken.</p>
+            <p class="card-price">Php600</p>
+          </div>
+
+          <div class="card-buttons">
+              <button class="btn btn-primary">
+                <i class="icon add-to-cart-icon fas fa-shopping-cart" title="Add to Cart"></i>
+              </button>
+
+              <button class="btn btn-favorite">
+              <i class="icon favorite-icon fas fa-heart"></i> Favorite
+              </button>
+          </div>
+        </div>
+      </div>
+
+      <!--Product 2-->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="product-card">
+          <img class="card-img-top" src="PadThai.jpg" alt="">
+          
+          <div class="card-body">
+            <h5 class="card-title">PadThai</h5>
+            <p class="card-text">Flavor: Salty, Sweet, Spicy, Sour, Creamy.</p>
+            <p class="card-price">PHp500</p>
+          </div>
+
+          <div class="card-buttons">
+              <button class="btn btn-primary">
+                <i class="icon add-to-cart-icon fas fa-shopping-cart" title="Add to Cart"></i>
+              </button>
+
+              <button class="btn btn-favorite">
+              <i class="icon favorite-icon fas fa-heart"></i> Favorite
+              </button>
+          </div>
+        </div>
+      </div>
+
+      <!--Product 3-->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="product-card">
+          <img class="card-img-top" src="IceCream.jpg" alt="">
+          
+          <div class="card-body">
+            <h5 class="card-title">IceCream</h5>
+            <p class="card-text">Forms: Sandwich, Cup, Cone, Cake</p>
+            <p class="card-price">Php300</p>
+          </div>
+
+          <div class="card-buttons">
+              <button class="btn btn-primary">
+                <i class="icon add-to-cart-icon fas fa-shopping-cart" title="Add to Cart"></i>
+              </button>
+
+              <button class="btn btn-favorite">
+              <i class="icon favorite-icon fas fa-heart"></i> Favorite
+              </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
