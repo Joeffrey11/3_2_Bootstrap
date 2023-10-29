@@ -24,6 +24,7 @@
     .product-card:hover {
         transform: scale(1.05);
         
+        
     }
 
     .card-img {
@@ -33,6 +34,7 @@
 
     .card-title {
         font-weight: bold;
+        color: white;
     }
 
     .card-price {
@@ -50,11 +52,11 @@
     .btn-favorite {
         background-color: transparent;
         border: none;
-        color: black; /* Change to your favorite color */
+        color: black; 
     }
 
     .btn-favorite:hover {
-        color: black; /* Change to your favorite color */
+        color: red; 
     }
     
     h1.card-title {
@@ -89,13 +91,24 @@
 .container{
     height: 100px;
 }
+body{
+  padding: 0;
+  margin: 0;
+}
 
-
+.image{
+  width: 100vw;
+    height: 100vh;
+    background-image: url('bg.jpg'); /* Replace 'your-image-url.jpg' with the URL or path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 </style>
 
 </head>
-<body>
+<body class="image">
     <!--Top Navigation Bar-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
